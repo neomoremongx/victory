@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory Tech | Premium Tech Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --light-blue: #4dabf7;
+            --navy-blue: #1e3a8a;
+            --bright-blue: #3b82f6;
+            --sky-blue: #e0f2fe;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --dark-text: #1e293b;
+            --medium-gray: #64748b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--white);
+            color: var(--dark-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+        }
+        
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            color: black;
+            text-shadow: 0 2px 10px rgba(30, 58, 138, 0.1);
+        }
+        
+        h2 {
+            font-size: 3rem;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+            color: black;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--light-blue), var(--navy-blue));
+            border-radius: 2px;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--navy-blue);
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(45deg, var(--light-blue), var(--bright-blue));
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--bright-blue), var(--navy-blue));
+            z-index: -1;
+            transition: transform 0.5s ease;
+            transform: scaleX(0);
+            transform-origin: right;
+        }
+        
+        .btn:hover:before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--light-blue);
+            color: var(--light-blue);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            background: var(--light-blue);
+            color: var(--white);
+        }
+        
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(224, 242, 254, 0.8);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 5px rgba(77, 171, 247, 0.3));
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--navy-blue);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--light-blue), var(--navy-blue));
+            transition: width 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--bright-blue);
+        }
+        
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--dark-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(77, 171, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
+                var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/557338112_122102400735043196_6483937882457902183_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH2ZAe38suNEc7vPqf69LOS5t_r_oaYOIPm3-v-hpg4g4Pb7QV65hh5dJWjgHuSm-2G5NfONOZNM0lI2TBeyCzW&_nc_ohc=fQfoDtlVqEwQ7kNvwE9V14J&_nc_oc=AdmnOLlN5_VMPrYWP_4COyhm-UPl2Q9Xj_xNSvY-pnXk9TkKBM9JGiLiUJF4BxFzESw&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=pbjb6r1E2HvNZGXcTX_pIw&oh=00_Afg0Npb7cM5cI-si21xx7kLOmLlxrIr_BYSru1xbu_1y_Q&oe=690E7A34');
+            opacity: 0.5;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: var(--medium-gray);
+        }
+        
+        .tagline {
+            font-style: italic;
+            color: var(--bright-blue);
+            font-weight: 500;
+            margin-top: 20px;
+        }
+        
+        .floating-icons {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            color: rgba(77, 171, 247, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            color: rgba(77, 171, 247, 0.4);
+        }
+        
+        .floating-icon:nth-child(2) {
+            top: 60%;
+            left: 85%;
+            animation-delay: 1s;
+            color: rgba(30, 58, 138, 0.4);
+        }
+        
+        .floating-icon:nth-child(3) {
+            top: 80%;
+            left: 15%;
+            animation-delay: 2s;
+            color: rgba(59, 130, 246, 0.4);
+        }
+        
+        .floating-icon:nth-child(4) {
+            top: 30%;
+            left: 80%;
+            animation-delay: 3s;
+            color: rgba(77, 171, 247, 0.4);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, rgba(77, 171, 247, 0.1) 0%, transparent 50%);
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-text {
+            animation: fadeLeft 1s ease;
+        }
+        
+        .about-image {
+            height: 400px;
+            background: linear-gradient(45deg, var(--light-blue), var(--bright-blue));
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            animation: fadeRight 1s ease;
+        }
+        
+        .about-image:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/557338112_122102400735043196_6483937882457902183_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH2ZAe38suNEc7vPqf69LOS5t_r_oaYOIPm3-v-hpg4g4Pb7QV65hh5dJWjgHuSm-2G5NfONOZNM0lI2TBeyCzW&_nc_ohc=fQfoDtlVqEwQ7kNvwE9V14J&_nc_oc=AdmnOLlN5_VMPrYWP_4COyhm-UPl2Q9Xj_xNSvY-pnXk9TkKBM9JGiLiUJF4BxFzESw&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=pbjb6r1E2HvNZGXcTX_pIw&oh=00_Afg0Npb7cM5cI-si21xx7kLOmLlxrIr_BYSru1xbu_1y_Q&oe=690E7A34');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.9;
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(30, 58, 138, 0.05) 0%, transparent 50%);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(224, 242, 254, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--light-blue), var(--navy-blue));
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            background: linear-gradient(45deg, var(--light-blue), var(--navy-blue));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .service-card h3 {
+            color: var(--navy-blue);
+            margin-bottom: 15px;
+        }
+        
+        .service-card p {
+            color: var(--medium-gray);
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(77, 171, 247, 0.1) 0%, transparent 50%);
+        }
+        
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact-info {
+            animation: fadeLeft 1s ease;
+        }
+        
+        .contact-details {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateX(5px);
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: var(--bright-blue);
+            width: 40px;
+            text-align: center;
+        }
+        
+        .hours {
+            margin-top: 30px;
+        }
+        
+        .hours h3 {
+            margin-bottom: 15px;
+            color: var(--navy-blue);
+        }
+        
+        .hours p {
+            margin-bottom: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--light-blue), var(--bright-blue));
+            color: var(--white);
+            border-radius: 50%;
+            margin-right: 15px;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+        }
+        
+        .form-container {
+            animation: fadeRight 1s ease;
+        }
+        
+        .form-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-tab {
+            flex: 1;
+            padding: 12px 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--dark-text);
+            transition: all 0.3s ease;
+            border-radius: 8px;
+        }
+        
+        .form-tab.active {
+            background: linear-gradient(45deg, var(--light-blue), var(--bright-blue));
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+        }
+        
+        .form-content {
+            display: none;
+        }
+        
+        .form-content.active {
+            display: block;
+            animation: fadeUp 0.5s ease;
+        }
+        
+        .contact-form {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(224, 242, 254, 0.8);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 500;
+            color: var(--navy-blue);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--light-gray);
+            border: 1px solid rgba(224, 242, 254, 0.8);
+            border-radius: 10px;
+            color: var(--dark-text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--light-blue);
+            box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.3);
+            background: var(--white);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(to bottom, var(--navy-blue), #1a2c5f);
+            padding: 70px 0 30px;
+            position: relative;
+            overflow: hidden;
+            color: var(--white);
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
+            opacity: 0.5;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--sky-blue);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--light-blue);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Animations */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(10deg);
+            }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.5rem;
+            }
+            
+            .about-content,
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: all 0.3s ease;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                border-top: 1px solid rgba(224, 242, 254, 0.8);
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                height: 90vh;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            section {
+                padding: 80px 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .form-tabs {
+                flex-direction: column;
+            }
+            
+            .form-tab {
+                text-align: left;
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <!-- Logo Image -->
+                <img src="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/557338112_122102400735043196_6483937882457902183_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH2ZAe38suNEc7vPqf69LOS5t_r_oaYOIPm3-v-hpg4g4Pb7QV65hh5dJWjgHuSm-2G5NfONOZNM0lI2TBeyCzW&_nc_ohc=fQfoDtlVqEwQ7kNvwE9V14J&_nc_oc=AdmnOLlN5_VMPrYWP_4COyhm-UPl2Q9Xj_xNSvY-pnXk9TkKBM9JGiLiUJF4BxFzESw&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=pbjb6r1E2HvNZGXcTX_pIw&oh=00_Afg0Npb7cM5cI-si21xx7kLOmLlxrIr_BYSru1xbu_1y_Q&oe=690E7A34" alt="Victory Tech Logo" class="logo">
+                <div class="logo-text">Victory Tech</div>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="floating-icons">
+            <div class="floating-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="floating-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="floating-icon"><i class="fas fa-network-wired"></i></div>
+            <div class="floating-icon"><i class="fas fa-server"></i></div>
+        </div>
+        <div class="container hero-content">
+            <h1>VICTORY TECH</h1>
+            <p>Premium tech solutions with a higher purpose. Expert computer services, advanced CCTV installations, and reliable gate motor solutions.</p>
+            <p class="tagline">Tech excellence with a higher purpose</p>
+            <a href="#contact" class="btn">Get Service Now</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Victory Tech is your premier technology partner in Potchefstroom and surrounding areas. We combine technical expertise with a commitment to customer satisfaction.</p>
+                    <p>Our mission extends beyond just fixing problems - we aim to empower our clients through technology, providing solutions that enhance security, productivity, and peace of mind.</p>
+                    <p>With years of experience and a passion for innovation, we deliver services that exceed expectations while maintaining the highest standards of quality and reliability.</p>
+                    <a href="#contact" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="about-image"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-medical"></i>
+                    </div>
+                    <h3>Computer Repairs</h3>
+                    <p>Complete computer diagnostics, hardware repairs, virus removal, and performance optimization for all makes and models.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <h3>Computer Upgrades</h3>
+                    <p>Memory upgrades, SSD installations, graphics card updates, and complete system enhancements for better performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <h3>Windows Installations</h3>
+                    <p>Professional Windows OS installation, configuration, and optimization with data backup and transfer services.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>CCTV Camera Services</h3>
+                    <p>Professional installation and maintenance of advanced CCTV security systems for residential and commercial properties.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Gate Motor Services</h3>
+                    <p>Expert installation, repair, and maintenance of gate motors and automation systems with smart access control.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Ready to solve your tech challenges? Get in touch with our expert team for fast, reliable service.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Potchefstroom, South Africa</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <p>064 681 3457</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>victory_tech@icloud.com</p>
+                        </div>
+                    </div>
+                    <div class="hours">
+                        <h3>Service Hours</h3>
+                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                        <p>Saturday: 9:00 AM - 2:00 PM</p>
+                        <p>Emergency services available</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form-tabs">
+                        <button class="form-tab active" data-tab="service">Service Request</button>
+                        <button class="form-tab" data-tab="enquiry">General Enquiry</button>
+                    </div>
+                    
+                    <div class="form-content active" id="service-form">
+                        <div class="contact-form">
+                            <h3>Request a Service</h3>
+                            <form id="serviceRequestForm">
+                                <div class="form-group">
+                                    <label for="service-name">Your Name</label>
+                                    <input type="text" id="service-name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service-phone">Phone Number</label>
+                                    <input type="tel" id="service-phone" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service-email">Email Address</label>
+                                    <input type="email" id="service-email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="service-type">Service Needed</label>
+                                    <select id="service-type" class="form-control" required>
+                                        <option value="">Select a service</option>
+                                        <option value="computer-repair">Computer Repair</option>
+                                        <option value="computer-upgrade">Computer Upgrade</option>
+                                        <option value="windows-installation">Windows Installation</option>
+                                        <option value="software-installation">Software Installation</option>
+                                        <option value="it-support">IT Support</option>
+                                        <option value="remote-support">Remote Support</option>
+                                        <option value="cctv">CCTV Camera Services</option>
+                                        <option value="gate-motor">Gate Motor Services</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="service-description">Problem Description</label>
+                                    <textarea id="service-description" class="form-control" required></textarea>
+                                </div>
+                                <button type="submit" class="btn">Submit Request</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="form-content" id="enquiry-form">
+                        <div class="contact-form">
+                            <h3>General Enquiry</h3>
+                            <form id="enquiryForm">
+                                <div class="form-group">
+                                    <label for="enquiry-name">Your Name</label>
+                                    <input type="text" id="enquiry-name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enquiry-email">Email Address</label>
+                                    <input type="email" id="enquiry-email" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enquiry-phone">Phone Number</label>
+                                    <input type="tel" id="enquiry-phone" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="enquiry-subject">Subject</label>
+                                    <input type="text" id="enquiry-subject" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="enquiry-message">Your Message</label>
+                                    <textarea id="enquiry-message" class="form-control" required></textarea>
+                                </div>
+                                <button type="submit" class="btn">Send Enquiry</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Victory Tech</h3>
+                    <p>Premium tech solutions with a higher purpose. Serving Potchefstroom with excellence since our inception.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li>Computer Repairs</li>
+                        <li>Computer Upgrades</li>
+                        <li>Windows Installations</li>
+                        <li>Software Installations</li>
+                        <li>IT Support</li>
+                        <li>CCTV Camera Services</li>
+                        <li>Gate Motor Services</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Potchefstroom, South Africa</li>
+                        <li><i class="fas fa-phone-alt"></i> 064 681 3457</li>
+                        <li><i class="fas fa-envelope"></i> victory_tech@icloud.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Victory Tech. All Rights Reserved. | Tech excellence with a higher purpose</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.padding = '15px 0';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.padding = '20px 0';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Form tabs functionality
+        const formTabs = document.querySelectorAll('.form-tab');
+        const formContents = document.querySelectorAll('.form-content');
+        
+        formTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                // Remove active class from all tabs and contents
+                formTabs.forEach(t => t.classList.remove('active'));
+                formContents.forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                document.getElementById(`${tabId}-form`).classList.add('active');
+            });
+        });
+        
+        // Contact form submission
+        const serviceForm = document.getElementById('serviceRequestForm');
+        serviceForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('service-name').value;
+            const phone = document.getElementById('service-phone').value;
+            const serviceType = document.getElementById('service-type').value;
+            
+            // In a real implementation, you would send this data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you for your service request, ${name}! We'll contact you at ${phone} soon about your ${serviceType} needs.`);
+            
+            // Reset form
+            serviceForm.reset();
+        });
+        
+        // Enquiry form submission
+        const enquiryForm = document.getElementById('enquiryForm');
+        enquiryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('enquiry-name').value;
+            const email = document.getElementById('enquiry-email').value;
+            const subject = document.getElementById('enquiry-subject').value;
+            
+            // In a real implementation, you would send this data to a server
+            // For this example, we'll just show an alert
+            alert(`Thank you for your enquiry, ${name}! We'll respond to ${email} soon regarding "${subject}".`);
+            
+            // Reset form
+            enquiryForm.reset();
+        });
+
+        // Add floating animation to service cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeUp 0.8s ease forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
