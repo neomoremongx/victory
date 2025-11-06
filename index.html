@@ -3,177 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victory Tech | Premium Tech Solutions</title>
+    <title>A & E Wedding and Function Decor | Elegant Event Styling</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         /* Base Styles */
         :root {
-            --light-blue: #4dabf7;
-            --navy-blue: #1e3a8a;
-            --bright-blue: #3b82f6;
-            --sky-blue: #e0f2fe;
+            --primary: #FF69B4;
+            --primary-dark: #E75480;
+            --primary-light: #FFB6C1;
+            --accent: #000000;
+            --accent-light: #333333;
             --white: #ffffff;
-            --light-gray: #f8fafc;
-            --dark-text: #1e293b;
-            --medium-gray: #64748b;
+            --light: #fff5f9;
+            --medium: #f8e8f0;
+            --dark: #222222;
+            --text: #2c2c2c;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
             background-color: var(--white);
-            color: var(--dark-text);
+            color: var(--text);
             line-height: 1.6;
+            font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
         }
         
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--accent);
+        }
+        
         .container {
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
         }
         
         section {
             padding: 100px 0;
         }
         
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-        }
-        
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            color: black;
-            text-shadow: 0 2px 10px rgba(30, 58, 138, 0.1);
-        }
-        
-        h2 {
-            font-size: 3rem;
-            margin-bottom: 50px;
+        .section-title {
+            margin-bottom: 60px;
             position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--accent);
             display: inline-block;
-            color: black;
+            position: relative;
         }
         
-        h2:after {
+        .section-title h2::after {
             content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
+            display: block;
             width: 80px;
-            height: 4px;
-            background: linear-gradient(to right, var(--light-blue), var(--navy-blue));
-            border-radius: 2px;
+            height: 3px;
+            background-color: var(--primary);
+            margin-top: 15px;
         }
         
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--navy-blue);
+        .section-title.centered {
+            text-align: center;
         }
         
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            color: var(--medium-gray);
+        .section-title.centered h2::after {
+            margin: 15px auto 0;
         }
         
         .btn {
             display: inline-block;
-            padding: 15px 35px;
-            background: linear-gradient(45deg, var(--light-blue), var(--bright-blue));
+            padding: 14px 32px;
+            background-color: var(--primary);
             color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 50px;
-            transition: all 0.4s ease;
             border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            transition: all 0.4s ease;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             position: relative;
             overflow: hidden;
-            z-index: 1;
         }
         
-        .btn:before {
+        .btn::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, var(--bright-blue), var(--navy-blue));
-            z-index: -1;
-            transition: transform 0.5s ease;
-            transform: scaleX(0);
-            transform-origin: right;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: 0.5s;
         }
         
-        .btn:hover:before {
-            transform: scaleX(1);
-            transform-origin: left;
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
         }
         
         .btn-outline {
-            background: transparent;
-            border: 2px solid var(--light-blue);
-            color: var(--light-blue);
-            box-shadow: none;
+            background-color: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
         }
         
         .btn-outline:hover {
-            background: var(--light-blue);
+            background-color: var(--primary);
             color: var(--white);
         }
         
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
-            border-bottom: 1px solid rgba(224, 242, 254, 0.8);
+        .btn-dark {
+            background-color: var(--accent);
+            color: var(--white);
         }
         
-        .header-container {
+        .btn-dark:hover {
+            background-color: var(--accent-light);
+        }
+        
+        /* Header Styles */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('a&e/header.jpg') no-repeat center center/cover;
+            color: var(--text);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background-color: var(--primary);
+            opacity: 0.05;
+            z-index: 0;
+        }
+        
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 25px 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        nav.scrolled {
+            padding: 15px 5%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
         
         .logo-container {
             display: flex;
             align-items: center;
+            gap: 15px;
+            text-decoration: none;
         }
         
-        .logo {
-            height: 50px;
-            margin-right: 15px;
-            filter: drop-shadow(0 0 5px rgba(77, 171, 247, 0.3));
+        .logo-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary);
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+        }
+        
+        .logo-image:hover {
+            transform: scale(1.05);
         }
         
         .logo-text {
+            font-family: 'Playfair Display', serif;
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--navy-blue);
+            color: var(--accent);
+            letter-spacing: 0.5px;
+        }
+        
+        .logo-text span {
+            color: var(--primary);
         }
         
         .nav-links {
@@ -182,399 +225,483 @@
         }
         
         .nav-links li {
-            margin-left: 30px;
+            margin-left: 40px;
+            position: relative;
         }
         
         .nav-links a {
-            color: var(--dark-text);
+            color: var(--accent);
             text-decoration: none;
+            font-size: 1rem;
             font-weight: 500;
-            position: relative;
             transition: color 0.3s ease;
-            padding: 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
         }
         
-        .nav-links a:after {
+        .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
             width: 0;
             height: 2px;
-            background: linear-gradient(to right, var(--light-blue), var(--navy-blue));
+            background-color: var(--primary);
             transition: width 0.3s ease;
         }
         
-        .nav-links a:hover {
-            color: var(--bright-blue);
-        }
-        
-        .nav-links a:hover:after {
+        .nav-links a:hover::after {
             width: 100%;
         }
         
-        .mobile-menu-btn {
+        .menu-toggle {
             display: none;
-            background: none;
-            border: none;
-            color: var(--dark-text);
-            font-size: 1.5rem;
             cursor: pointer;
-        }
-        
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(77, 171, 247, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(30, 58, 138, 0.1) 0%, transparent 50%),
-                var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/557338112_122102400735043196_6483937882457902183_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH2ZAe38suNEc7vPqf69LOS5t_r_oaYOIPm3-v-hpg4g4Pb7QV65hh5dJWjgHuSm-2G5NfONOZNM0lI2TBeyCzW&_nc_ohc=fQfoDtlVqEwQ7kNvwE9V14J&_nc_oc=AdmnOLlN5_VMPrYWP_4COyhm-UPl2Q9Xj_xNSvY-pnXk9TkKBM9JGiLiUJF4BxFzESw&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=pbjb6r1E2HvNZGXcTX_pIw&oh=00_Afg0Npb7cM5cI-si21xx7kLOmLlxrIr_BYSru1xbu_1y_Q&oe=690E7A34');
-            opacity: 0.5;
+            font-size: 1.5rem;
+            color: var(--accent);
         }
         
         .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 5%;
             position: relative;
-            z-index: 2;
-            animation: fadeUp 1s ease;
+            z-index: 1;
         }
         
-        .hero p {
-            font-size: 1.3rem;
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+            animation: fadeInLeft 1.2s ease;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+            line-height: 1.2;
+        }
+        
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
             margin-bottom: 40px;
-            color: var(--medium-gray);
+            color: var(--text);
+            line-height: 1.8;
         }
         
-        .tagline {
-            font-style: italic;
-            color: var(--bright-blue);
-            font-weight: 500;
-            margin-top: 20px;
+        .hero-btns {
+            display: flex;
+            gap: 20px;
         }
         
-        .floating-icons {
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            animation: fadeInRight 1.2s ease;
+        }
+        
+        .hero-image-content {
+            width: 400px;
+            height: 500px;
+            background-color: var(--primary);
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(255, 105, 180, 0.2);
+        }
+        
+        .hero-image-content::before {
+            content: '';
             position: absolute;
+            top: 20px;
+            left: 20px;
+            right: -20px;
+            bottom: -20px;
+            border: 2px solid var(--primary-light);
+            border-radius: 10px;
+            z-index: -1;
+        }
+        
+        .hero-image-content img {
             width: 100%;
             height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-        }
-        
-        .floating-icon {
-            position: absolute;
-            font-size: 2rem;
-            color: rgba(77, 171, 247, 0.3);
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .floating-icon:nth-child(1) {
-            top: 20%;
-            left: 10%;
-            animation-delay: 0s;
-            color: rgba(77, 171, 247, 0.4);
-        }
-        
-        .floating-icon:nth-child(2) {
-            top: 60%;
-            left: 85%;
-            animation-delay: 1s;
-            color: rgba(30, 58, 138, 0.4);
-        }
-        
-        .floating-icon:nth-child(3) {
-            top: 80%;
-            left: 15%;
-            animation-delay: 2s;
-            color: rgba(59, 130, 246, 0.4);
-        }
-        
-        .floating-icon:nth-child(4) {
-            top: 30%;
-            left: 80%;
-            animation-delay: 3s;
-            color: rgba(77, 171, 247, 0.4);
+            object-fit: cover;
         }
         
         /* About Section */
         .about {
-            background-color: var(--light-gray);
+            background-color: var(--light);
             position: relative;
-            overflow: hidden;
         }
         
-        .about:before {
+        .about::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            width: 40%;
             height: 100%;
-            background: radial-gradient(circle at 30% 70%, rgba(77, 171, 247, 0.1) 0%, transparent 50%);
+            background-color: var(--primary);
+            opacity: 0.05;
+            z-index: 0;
         }
         
         .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            display: flex;
             align-items: center;
+            gap: 80px;
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
         
         .about-text {
-            animation: fadeLeft 1s ease;
+            flex: 1;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+        
+        .about-text p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .feature-icon i {
+            color: var(--white);
+            font-size: 1.5rem;
+        }
+        
+        .feature-content h4 {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+        
+        .feature-content p {
+            margin: 0;
+            color: var(--text);
         }
         
         .about-image {
-            height: 400px;
-            background: linear-gradient(45deg, var(--light-blue), var(--bright-blue));
-            border-radius: 20px;
+            flex: 1;
             position: relative;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-            animation: fadeRight 1s ease;
         }
         
-        .about-image:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        .about-image-main {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image-main img {
             width: 100%;
-            height: 100%;
-            background: url('https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/557338112_122102400735043196_6483937882457902183_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH2ZAe38suNEc7vPqf69LOS5t_r_oaYOIPm3-v-hpg4g4Pb7QV65hh5dJWjgHuSm-2G5NfONOZNM0lI2TBeyCzW&_nc_ohc=fQfoDtlVqEwQ7kNvwE9V14J&_nc_oc=AdmnOLlN5_VMPrYWP_4COyhm-UPl2Q9Xj_xNSvY-pnXk9TkKBM9JGiLiUJF4BxFzESw&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=pbjb6r1E2HvNZGXcTX_pIw&oh=00_Afg0Npb7cM5cI-si21xx7kLOmLlxrIr_BYSru1xbu_1y_Q&oe=690E7A34');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.9;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        
+        .about-image-main:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-image-badge {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
+        }
+        
+        .about-image-badge h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
         }
         
         /* Services Section */
         .services {
             background-color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .services:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 70% 30%, rgba(30, 58, 138, 0.05) 0%, transparent 50%);
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
-            position: relative;
-            z-index: 2;
         }
         
         .service-card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 20px;
-            transition: all 0.4s ease;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(224, 242, 254, 0.8);
-            position: relative;
+            background-color: var(--white);
+            border-radius: 10px;
             overflow: hidden;
-        }
-        
-        .service-card:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: linear-gradient(to right, var(--light-blue), var(--navy-blue));
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            border-top: 4px solid var(--primary);
         }
         
         .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
         }
         
         .service-icon {
-            font-size: 3.5rem;
-            margin-bottom: 25px;
-            background: linear-gradient(45deg, var(--light-blue), var(--navy-blue));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .service-card h3 {
-            color: var(--navy-blue);
-            margin-bottom: 15px;
-        }
-        
-        .service-card p {
-            color: var(--medium-gray);
-        }
-        
-        /* Contact Section */
-        .contact {
-            background-color: var(--light-gray);
+            height: 80px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: relative;
-            overflow: hidden;
         }
         
-        .contact:before {
+        .service-icon::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at 50% 50%, rgba(77, 171, 247, 0.1) 0%, transparent 50%);
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
         }
         
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            position: relative;
-            z-index: 2;
+        .service-icon i {
+            color: var(--white);
+            font-size: 2.5rem;
         }
         
-        .contact-info {
-            animation: fadeLeft 1s ease;
+        .service-content {
+            padding: 30px;
         }
         
-        .contact-details {
-            margin-top: 30px;
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
         }
         
-        .contact-item {
-            display: flex;
+        .service-content p {
+            color: var(--text);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .service-link {
+            display: inline-flex;
             align-items: center;
-            margin-bottom: 25px;
-            padding: 15px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 10px;
+            color: var(--primary);
+            font-weight: 500;
+            text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
-        .contact-item:hover {
-            background: rgba(255, 255, 255, 0.9);
+        .service-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-link:hover i {
             transform: translateX(5px);
         }
         
-        .contact-item i {
-            font-size: 1.5rem;
-            margin-right: 15px;
-            color: var(--bright-blue);
-            width: 40px;
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light);
+            position: relative;
+        }
+        
+        .gallery::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            height: 100%;
+            background-color: var(--primary);
+            opacity: 0.05;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 105, 180, 0.8);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: 20px;
             text-align: center;
         }
         
-        .hours {
-            margin-top: 30px;
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
         }
         
-        .hours h3 {
-            margin-bottom: 15px;
-            color: var(--navy-blue);
+        .gallery-overlay h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
         
-        .hours p {
+        .gallery-overlay p {
+            color: var(--white);
+            font-size: 1rem;
+        }
+        
+        /* Booking Section */
+        .booking {
+            background-color: var(--white);
+        }
+        
+        .booking-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .booking-info {
+            padding-right: 40px;
+        }
+        
+        .booking-info h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+        
+        .booking-details {
+            margin-bottom: 40px;
+        }
+        
+        .booking-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .booking-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .booking-item i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.3rem;
+            margin-top: 5px;
+            width: 20px;
+        }
+        
+        .booking-item-content h4 {
+            font-size: 1.2rem;
+            color: var(--accent);
             margin-bottom: 5px;
         }
         
         .social-links {
             display: flex;
-            margin-top: 30px;
+            gap: 15px;
         }
         
         .social-links a {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, var(--light-blue), var(--bright-blue));
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary);
             color: var(--white);
             border-radius: 50%;
-            margin-right: 15px;
             transition: all 0.3s ease;
             font-size: 1.2rem;
         }
         
         .social-links a:hover {
-            transform: translateY(-5px) rotate(10deg);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
         }
         
-        .form-container {
-            animation: fadeRight 1s ease;
-        }
-        
-        .form-tabs {
-            display: flex;
-            margin-bottom: 20px;
-            background: rgba(255, 255, 255, 0.7);
+        .booking-form {
+            background-color: var(--light);
+            padding: 40px;
             border-radius: 10px;
-            padding: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-        
-        .form-tab {
-            flex: 1;
-            padding: 12px 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-weight: 500;
-            color: var(--dark-text);
-            transition: all 0.3s ease;
-            border-radius: 8px;
-        }
-        
-        .form-tab.active {
-            background: linear-gradient(45deg, var(--light-blue), var(--bright-blue));
-            color: var(--white);
-            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
-        }
-        
-        .form-content {
-            display: none;
-        }
-        
-        .form-content.active {
-            display: block;
-            animation: fadeUp 0.5s ease;
-        }
-        
-        .contact-form {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(224, 242, 254, 0.8);
+            border-top: 4px solid var(--primary);
         }
         
         .form-group {
@@ -585,68 +712,148 @@
             display: block;
             margin-bottom: 10px;
             font-weight: 500;
-            color: var(--navy-blue);
+            color: var(--accent);
         }
         
         .form-control {
             width: 100%;
-            padding: 15px 20px;
-            background: var(--light-gray);
-            border: 1px solid rgba(224, 242, 254, 0.8);
-            border-radius: 10px;
-            color: var(--dark-text);
+            padding: 14px 15px;
+            border: 1px solid var(--medium);
+            border-radius: 4px;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: border 0.3s ease;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white);
         }
         
         .form-control:focus {
+            border-color: var(--primary);
             outline: none;
-            border-color: var(--light-blue);
-            box-shadow: 0 0 0 2px rgba(77, 171, 247, 0.3);
-            background: var(--white);
+            box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
         }
         
         textarea.form-control {
-            min-height: 120px;
+            min-height: 150px;
             resize: vertical;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .contact-info {
+            padding-right: 40px;
+        }
+        
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--accent);
+        }
+        
+        .contact-details {
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: var(--white);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
+        }
+        
+        .contact-item i {
+            color: var(--primary);
+            margin-right: 15px;
+            font-size: 1.3rem;
+            margin-top: 5px;
+            width: 20px;
+        }
+        
+        .contact-item-content h4 {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+        
+        .contact-form {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid var(--primary);
         }
         
         /* Footer */
         footer {
-            background: linear-gradient(to bottom, var(--navy-blue), #1a2c5f);
-            padding: 70px 0 30px;
-            position: relative;
-            overflow: hidden;
+           
+            background-color: var(--accent);
             color: var(--white);
-        }
-        
-        footer:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23dots)"/></svg>');
-            opacity: 0.5;
+            padding: 70px 0 25px;
         }
         
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-            position: relative;
-            z-index: 2;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
         }
         
-        .footer-column h3 {
+        .footer-about {
+            max-width: 400px;
+        }
+        
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-logo span {
+            color: var(--primary);
+        }
+        
+        .footer-about p {
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: var(--medium);
+        }
+        
+        .footer-links h4 {
             font-size: 1.3rem;
             margin-bottom: 25px;
-            color: var(--sky-blue);
+            color: var(--white);
+            position: relative;
         }
         
-        .footer-links {
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+        
+        .footer-links ul {
             list-style: none;
         }
         
@@ -655,41 +862,28 @@
         }
         
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: var(--medium);
             text-decoration: none;
             transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: var(--light-blue);
+            color: var(--primary);
         }
         
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--medium);
             font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-            position: relative;
-            z-index: 2;
         }
         
         /* Animations */
-        @keyframes fadeUp {
+        @keyframes fadeInLeft {
             from {
                 opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
+                transform: translateX(-40px);
             }
             to {
                 opacity: 1;
@@ -697,10 +891,10 @@
             }
         }
         
-        @keyframes fadeRight {
+        @keyframes fadeInRight {
             from {
                 opacity: 0;
-                transform: translateX(30px);
+                transform: translateX(40px);
             }
             to {
                 opacity: 1;
@@ -708,477 +902,722 @@
             }
         }
         
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .about-content {
+                gap: 40px;
             }
-            50% {
-                transform: translateY(-20px) rotate(10deg);
+            
+            .booking-container, .contact-container {
+                gap: 40px;
+            }
+            
+            .footer-content {
+                gap: 40px;
             }
         }
         
-        /* Responsive Design */
         @media (max-width: 992px) {
-            h1 {
-                font-size: 3rem;
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
             }
             
-            h2 {
-                font-size: 2.5rem;
+            .hero-text {
+                max-width: 100%;
+                margin-bottom: 40px;
             }
             
-            .about-content,
-            .contact-content {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .booking-container, .contact-container {
                 grid-template-columns: 1fr;
             }
             
-            .about-image {
-                height: 300px;
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: all 0.3s ease;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-                border-top: 1px solid rgba(224, 242, 254, 0.8);
-            }
-            
-            .nav-links.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .mobile-menu-btn {
+            .menu-toggle {
                 display: block;
             }
             
-            .hero {
-                height: 90vh;
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 60px;
+                transition: left 0.4s ease;
+                z-index: 999;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             }
             
-            h1 {
-                font-size: 2.5rem;
+            .nav-links.active {
+                left: 0;
             }
             
-            h2 {
-                font-size: 2rem;
+            .nav-links li {
+                margin: 0 0 30px 0;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-image-content {
+                width: 300px;
+                height: 400px;
+            }
+            
+            .section-title h2 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
             }
         }
         
         @media (max-width: 576px) {
-            section {
-                padding: 80px 0;
-            }
-            
-            h1 {
+            .hero-text h1 {
                 font-size: 2.2rem;
             }
             
-            h2 {
-                font-size: 1.8rem;
+            .services-grid {
+                grid-template-columns: 1fr;
             }
             
-            .form-tabs {
-                flex-direction: column;
+            .booking-form, .contact-form {
+                padding: 30px 20px;
             }
             
-            .form-tab {
-                text-align: left;
-                margin-bottom: 5px;
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-image-content {
+                width: 250px;
+                height: 350px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <div class="logo-container">
-                <!-- Logo Image -->
-                <img src="https://scontent-jnb2-1.xx.fbcdn.net/v/t39.30808-6/557338112_122102400735043196_6483937882457902183_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeH2ZAe38suNEc7vPqf69LOS5t_r_oaYOIPm3-v-hpg4g4Pb7QV65hh5dJWjgHuSm-2G5NfONOZNM0lI2TBeyCzW&_nc_ohc=fQfoDtlVqEwQ7kNvwE9V14J&_nc_oc=AdmnOLlN5_VMPrYWP_4COyhm-UPl2Q9Xj_xNSvY-pnXk9TkKBM9JGiLiUJF4BxFzESw&_nc_zt=23&_nc_ht=scontent-jnb2-1.xx&_nc_gid=pbjb6r1E2HvNZGXcTX_pIw&oh=00_Afg0Npb7cM5cI-si21xx7kLOmLlxrIr_BYSru1xbu_1y_Q&oe=690E7A34" alt="Victory Tech Logo" class="logo">
-                <div class="logo-text">Victory Tech</div>
-            </div>
-            <button class="mobile-menu-btn">
+    <!-- Header Section -->
+    <header id="home">
+        <nav id="navbar">
+            <a href="#" class="logo-container">
+                <img src="a&e/logo.jpg" alt="A & E Wedding and Function Decor Logo" class="logo-image">
+                <div class="logo-text">A & E <span>Decor</span></div>
+            </a>
+            <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
+            </div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#booking">Book Decor</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+        </nav>
+        
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Creating <span>Dream</span> Events</h1>
+                <p>A & E Wedding and Function Decor transforms your vision into reality with exquisite decor and styling for weddings and special events. Let us create the perfect ambiance for your celebration.</p>
+                <div class="hero-btns">
+                    <a href="#booking" class="btn">Book Our Services</a>
+                    <a href="#gallery" class="btn btn-outline">View Gallery</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="hero-image-content">
+                    <img src="a&e/logo.jpg" alt="Elegant Wedding Decor">
+                </div>
+            </div>
         </div>
     </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="floating-icons">
-            <div class="floating-icon"><i class="fas fa-laptop-code"></i></div>
-            <div class="floating-icon"><i class="fas fa-shield-alt"></i></div>
-            <div class="floating-icon"><i class="fas fa-network-wired"></i></div>
-            <div class="floating-icon"><i class="fas fa-server"></i></div>
-        </div>
-        <div class="container hero-content">
-            <h1>VICTORY TECH</h1>
-            <p>Premium tech solutions with a higher purpose. Expert computer services, advanced CCTV installations, and reliable gate motor solutions.</p>
-            <p class="tagline">Tech excellence with a higher purpose</p>
-            <a href="#contact" class="btn">Get Service Now</a>
-        </div>
-    </section>
-
+    
     <!-- About Section -->
-    <section id="about" class="about">
+    <section class="about" id="about">
         <div class="container">
-            <h2>About Us</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Victory Tech is your premier technology partner in Potchefstroom and surrounding areas. We combine technical expertise with a commitment to customer satisfaction.</p>
-                    <p>Our mission extends beyond just fixing problems - we aim to empower our clients through technology, providing solutions that enhance security, productivity, and peace of mind.</p>
-                    <p>With years of experience and a passion for innovation, we deliver services that exceed expectations while maintaining the highest standards of quality and reliability.</p>
-                    <a href="#contact" class="btn btn-outline">Learn More</a>
+                    <div class="section-title">
+                        <h2>About Our Decor Services</h2>
+                    </div>
+                    <p>A & E Wedding and Function Decor specializes in creating breathtaking environments for weddings and special events. With an eye for detail and a passion for design, we transform ordinary spaces into extraordinary experiences.</p>
+                    <p>Our team of creative professionals works closely with each client to understand their vision and bring it to life with elegance and style. From intimate gatherings to grand celebrations, we create the perfect atmosphere for your special day.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Creative Design</h4>
+                                <p>Unique and personalized decor concepts</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Attention to Detail</h4>
+                                <p>Meticulous planning and execution</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Premium Quality</h4>
+                                <p>High-quality materials and furnishings</p>
+                            </div>
+                        </div>
+                        <div class="feature">
+                            <div class="feature-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Professional Service</h4>
+                                <p>Dedicated team from planning to execution</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="about-image"></div>
+                <div class="about-image">
+                    <div class="about-image-main">
+                        <img src="a&e/539587672_1418963399716934_8924566138975130456_n.jpg" alt="Wedding Decor Setup">
+                    </div>
+                    <div class="about-image-badge">
+                        <h3>100+ Events</h3>
+                        <p>Successfully decorated</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Services Section -->
-    <section id="services" class="services">
+    <section class="services" id="services">
         <div class="container">
-            <h2>Our Services</h2>
+            <div class="section-title centered">
+                <h2>Our Decor Services</h2>
+                <p>Comprehensive decor solutions for your special event</p>
+            </div>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-laptop-medical"></i>
+                        <i class="fas fa-ring"></i>
                     </div>
-                    <h3>Computer Repairs</h3>
-                    <p>Complete computer diagnostics, hardware repairs, virus removal, and performance optimization for all makes and models.</p>
+                    <div class="service-content">
+                        <h3>Wedding Decor</h3>
+                        <p>Complete wedding decor packages including ceremony and reception styling, floral arrangements, and thematic elements.</p>
+                        <a href="#booking" class="service-link">Book Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-tachometer-alt"></i>
+                        <i class="fas fa-birthday-cake"></i>
                     </div>
-                    <h3>Computer Upgrades</h3>
-                    <p>Memory upgrades, SSD installations, graphics card updates, and complete system enhancements for better performance.</p>
+                    <div class="service-content">
+                        <h3>Birthday Parties</h3>
+                        <p>Creative decor for milestone birthdays, children's parties, and special celebrations with personalized themes.</p>
+                        <a href="#booking" class="service-link">Book Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fab fa-windows"></i>
+                        <i class="fas fa-glass-cheers"></i>
                     </div>
-                    <h3>Windows Installations</h3>
-                    <p>Professional Windows OS installation, configuration, and optimization with data backup and transfer services.</p>
+                    <div class="service-content">
+                        <h3>Corporate Events</h3>
+                        <p>Professional decor for corporate functions, galas, product launches, and business celebrations.</p>
+                        <a href="#booking" class="service-link">Book Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-video"></i>
+                        <i class="fas fa-graduation-cap"></i>
                     </div>
-                    <h3>CCTV Camera Services</h3>
-                    <p>Professional installation and maintenance of advanced CCTV security systems for residential and commercial properties.</p>
+                    <div class="service-content">
+                        <h3>Graduation Parties</h3>
+                        <p>Celebratory decor for graduation ceremonies and parties with school colors and achievement themes.</p>
+                        <a href="#booking" class="service-link">Book Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
+                
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-baby"></i>
                     </div>
-                    <h3>Gate Motor Services</h3>
-                    <p>Expert installation, repair, and maintenance of gate motors and automation systems with smart access control.</p>
+                    <div class="service-content">
+                        <h3>Baby Showers</h3>
+                        <p>Adorable decor for baby showers with gender-neutral or themed styling for the special arrival.</p>
+                        <a href="#booking" class="service-link">Book Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Anniversary Parties</h3>
+                        <p>Romantic decor for anniversary celebrations honoring years of love and commitment.</p>
+                        <a href="#booking" class="service-link">Book Service <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
+    
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
         <div class="container">
-            <h2>Contact Us</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>Ready to solve your tech challenges? Get in touch with our expert team for fast, reliable service.</p>
+            <div class="section-title centered">
+                <h2>Our Gallery</h2>
+                <p>Browse our portfolio of beautifully decorated events</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="a&e/555824197_1448489520097655_4575035842303519717_n.jpg" alt="Elegant Wedding Reception">
+                    <div class="gallery-overlay">
+                        <h3>Romantic Wedding</h3>
+                        <p>Elegant reception with floral centerpieces</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="a&e/574061669_1481101296836477_6929904008767281197_n.jpg" alt="Birthday Party Decor">
+                    <div class="gallery-overlay">
+                        <h3>Milestone Birthday</h3>
+                        <p>Vibrant celebration with custom decorations</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="a&e/557312981_1454252696188004_5441548379261691351_n.jpg" alt="Corporate Event">
+                    <div class="gallery-overlay">
+                        <h3>Corporate Gala</h3>
+                        <p>Sophisticated corporate event styling</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="a&e/574025383_1481856473427626_2749301094359185348_n.jpg" alt="Baby Shower">
+                    <div class="gallery-overlay">
+                        <h3>Baby Shower</h3>
+                        <p>Adorable gender-neutral theme</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="a&e/539587672_1418963399716934_8924566138975130456_n.jpg" alt="Wedding Ceremony">
+                    <div class="gallery-overlay">
+                        <h3>Garden Wedding</h3>
+                        <p>Beautiful outdoor ceremony setup</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="a&e/574025383_1481856473427626_2749301094359185348_n.jpg" alt="Anniversary Party">
+                    <div class="gallery-overlay">
+                        <h3>Golden Anniversary</h3>
+                        <p>Elegant 50th anniversary celebration</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Booking Section -->
+    <section class="booking" id="booking">
+        <div class="container">
+            <div class="section-title centered">
+                <h2>Book Our Decor Services</h2>
+                <p>Let us create the perfect ambiance for your special event</p>
+            </div>
+            <div class="booking-container">
+                <div class="booking-info">
+                    <h3>Plan Your Event</h3>
+                    <div class="booking-details">
+                        <div class="booking-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <div class="booking-item-content">
+                                <h4>Consultation</h4>
+                                <p>We begin with a detailed consultation to understand your vision and requirements.</p>
+                            </div>
+                        </div>
+                        <div class="booking-item">
+                            <i class="fas fa-palette"></i>
+                            <div class="booking-item-content">
+                                <h4>Design Concept</h4>
+                                <p>Our team creates a customized design concept based on your preferences.</p>
+                            </div>
+                        </div>
+                        <div class="booking-item">
+                            <i class="fas fa-clipboard-list"></i>
+                            <div class="booking-item-content">
+                                <h4>Planning</h4>
+                                <p>We handle all the details from sourcing materials to coordinating with vendors.</p>
+                            </div>
+                        </div>
+                        <div class="booking-item">
+                            <i class="fas fa-magic"></i>
+                            <div class="booking-item-content">
+                                <h4>Execution</h4>
+                                <p>Our team transforms your venue into the event of your dreams.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Contact Information</h3>
                     <div class="contact-details">
                         <div class="contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>Potchefstroom, South Africa</p>
+                            <div class="contact-item-content">
+                                <h4>Address</h4>
+                                <p>41 Paryslaan, Potchefstroom, South Africa</p>
+                            </div>
                         </div>
                         <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <p>064 681 3457</p>
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-item-content">
+                                <h4>Phone</h4>
+                                <p>082 801 2827</p>
+                            </div>
                         </div>
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
-                            <p>victory_tech@icloud.com</p>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <p>aedecor@aedecor.org.za</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="hours">
-                        <h3>Service Hours</h3>
-                        <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                        <p>Saturday: 9:00 AM - 2:00 PM</p>
-                        <p>Emergency services available</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                <div class="form-container">
-                    <div class="form-tabs">
-                        <button class="form-tab active" data-tab="service">Service Request</button>
-                        <button class="form-tab" data-tab="enquiry">General Enquiry</button>
-                    </div>
-                    
-                    <div class="form-content active" id="service-form">
-                        <div class="contact-form">
-                            <h3>Request a Service</h3>
-                            <form id="serviceRequestForm">
-                                <div class="form-group">
-                                    <label for="service-name">Your Name</label>
-                                    <input type="text" id="service-name" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="service-phone">Phone Number</label>
-                                    <input type="tel" id="service-phone" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="service-email">Email Address</label>
-                                    <input type="email" id="service-email" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="service-type">Service Needed</label>
-                                    <select id="service-type" class="form-control" required>
-                                        <option value="">Select a service</option>
-                                        <option value="computer-repair">Computer Repair</option>
-                                        <option value="computer-upgrade">Computer Upgrade</option>
-                                        <option value="windows-installation">Windows Installation</option>
-                                        <option value="software-installation">Software Installation</option>
-                                        <option value="it-support">IT Support</option>
-                                        <option value="remote-support">Remote Support</option>
-                                        <option value="cctv">CCTV Camera Services</option>
-                                        <option value="gate-motor">Gate Motor Services</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="service-description">Problem Description</label>
-                                    <textarea id="service-description" class="form-control" required></textarea>
-                                </div>
-                                <button type="submit" class="btn">Submit Request</button>
-                            </form>
+                <div class="booking-form">
+                    <form id="bookingForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Full Name" required>
                         </div>
-                    </div>
-                    
-                    <div class="form-content" id="enquiry-form">
-                        <div class="contact-form">
-                            <h3>General Enquiry</h3>
-                            <form id="enquiryForm">
-                                <div class="form-group">
-                                    <label for="enquiry-name">Your Name</label>
-                                    <input type="text" id="enquiry-name" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="enquiry-email">Email Address</label>
-                                    <input type="email" id="enquiry-email" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="enquiry-phone">Phone Number</label>
-                                    <input type="tel" id="enquiry-phone" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label for="enquiry-subject">Subject</label>
-                                    <input type="text" id="enquiry-subject" class="form-control" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="enquiry-message">Your Message</label>
-                                    <textarea id="enquiry-message" class="form-control" required></textarea>
-                                </div>
-                                <button type="submit" class="btn">Send Enquiry</button>
-                            </form>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email Address" required>
                         </div>
-                    </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type">Event Type</label>
+                            <select id="event-type" class="form-control" required>
+                                <option value="">Select Event Type</option>
+                                <option value="wedding">Wedding</option>
+                                <option value="birthday">Birthday Party</option>
+                                <option value="corporate">Corporate Event</option>
+                                <option value="graduation">Graduation Party</option>
+                                <option value="baby-shower">Baby Shower</option>
+                                <option value="anniversary">Anniversary Party</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-date">Event Date</label>
+                            <input type="date" id="event-date" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="guest-count">Approximate Guest Count</label>
+                            <input type="number" id="guest-count" class="form-control" placeholder="Number of Guests" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="budget">Budget Range</label>
+                            <select id="budget" class="form-control" required>
+                                <option value="">Select Budget Range</option>
+                                <option value="under-5000">Under R5,000</option>
+                                <option value="5000-10000">R5,000 - R10,000</option>
+                                <option value="10000-20000">R10,000 - R20,000</option>
+                                <option value="20000-50000">R20,000 - R50,000</option>
+                                <option value="over-50000">Over R50,000</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Event Details & Special Requests</label>
+                            <textarea id="message" class="form-control" rows="5" placeholder="Please describe your event vision, theme, colors, and any special requests..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Submit Booking Request</button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
-
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title centered">
+                <h2>Contact Us</h2>
+                <p>Get in touch for inquiries and consultations</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-item-content">
+                                <h4>Address</h4>
+                                <p>41 Paryslaan, Potchefstroom, South Africa</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-item-content">
+                                <h4>Phone</h4>
+                                <p>082 801 2827</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-item-content">
+                                <h4>Email</h4>
+                                <p>aedecor@aedecor.org.za</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-item-content">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                                <p>Saturday: 9:00 AM - 2:00 PM</p>
+                                <p>Sunday: By Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" class="form-control" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Your Email</label>
+                            <input type="email" id="contact-email" class="form-control" placeholder="Your Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-phone">Your Phone</label>
+                            <input type="tel" id="contact-phone" class="form-control" placeholder="Your Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-message">Your Message</label>
+                            <textarea id="contact-message" class="form-control" rows="5" placeholder="Please describe your inquiry..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-column">
-                    <h3>Victory Tech</h3>
-                    <p>Premium tech solutions with a higher purpose. Serving Potchefstroom with excellence since our inception.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
+                <div class="footer-about">
+                    <div class="footer-logo">A & E <span>Decor</span></div>
+                    <p>A & E Wedding and Function Decor transforms your vision into reality with exquisite decor and styling for weddings and special events. Let us create the perfect ambiance for your celebration.</p>
+                    <p>Wedding Decor · Event Styling · Party Planning · Creative Design</p>
                 </div>
-                <div class="footer-column">
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#booking">Book Decor</a></li>
                     </ul>
                 </div>
-                <div class="footer-column">
-                    <h3>Services</h3>
-                    <ul class="footer-links">
-                        <li>Computer Repairs</li>
-                        <li>Computer Upgrades</li>
-                        <li>Windows Installations</li>
-                        <li>Software Installations</li>
-                        <li>IT Support</li>
-                        <li>CCTV Camera Services</li>
-                        <li>Gate Motor Services</li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Potchefstroom, South Africa</li>
-                        <li><i class="fas fa-phone-alt"></i> 064 681 3457</li>
-                        <li><i class="fas fa-envelope"></i> victory_tech@icloud.com</li>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#services">Wedding Decor</a></li>
+                        <li><a href="#services">Birthday Parties</a></li>
+                        <li><a href="#services">Corporate Events</a></li>
+                        <li><a href="#services">Graduation Parties</a></li>
+                        <li><a href="#services">Baby Showers</a></li>
                     </ul>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2025 Victory Tech. All Rights Reserved. | Tech excellence with a higher purpose</p>
+                <p>&copy; 2025 A & E Wedding and Function Decor. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
-
+    
     <script>
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
         
-        mobileMenuBtn.addEventListener('click', () => {
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
         });
         
         // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
+        const navItems = document.querySelectorAll('.nav-links a');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
                 navLinks.classList.remove('active');
             });
         });
         
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.padding = '15px 0';
-                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.padding = '20px 0';
-                header.style.boxShadow = 'none';
-            }
-        });
+        // Service cards animation on scroll
+        const serviceCards = document.querySelectorAll('.service-card');
         
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+        const serviceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
+        }, { threshold: 0.1 });
+        
+        serviceCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            serviceObserver.observe(card);
         });
         
-        // Form tabs functionality
-        const formTabs = document.querySelectorAll('.form-tab');
-        const formContents = document.querySelectorAll('.form-content');
+        // Gallery items animation on scroll
+        const galleryItems = document.querySelectorAll('.gallery-item');
         
-        formTabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const tabId = tab.getAttribute('data-tab');
-                
-                // Remove active class from all tabs and contents
-                formTabs.forEach(t => t.classList.remove('active'));
-                formContents.forEach(c => c.classList.remove('active'));
-                
-                // Add active class to clicked tab and corresponding content
-                tab.classList.add('active');
-                document.getElementById(`${tabId}-form`).classList.add('active');
+        const galleryObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
             });
+        }, { threshold: 0.1 });
+        
+        galleryItems.forEach(item => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            galleryObserver.observe(item);
         });
         
-        // Contact form submission
-        const serviceForm = document.getElementById('serviceRequestForm');
-        serviceForm.addEventListener('submit', function(e) {
+        // Form submissions
+        const bookingForm = document.getElementById('bookingForm');
+        const contactForm = document.getElementById('contactForm');
+        
+        bookingForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('service-name').value;
-            const phone = document.getElementById('service-phone').value;
-            const serviceType = document.getElementById('service-type').value;
+            // Get form data
+            const formData = new FormData(this);
+            const name = document.getElementById('name').value;
             
             // In a real implementation, you would send this data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you for your service request, ${name}! We'll contact you at ${phone} soon about your ${serviceType} needs.`);
-            
-            // Reset form
-            serviceForm.reset();
+            // For now, we'll just show a success message
+            alert(`Thank you ${name}! Your booking request has been received. We will contact you shortly to discuss your event.`);
+            bookingForm.reset();
         });
         
-        // Enquiry form submission
-        const enquiryForm = document.getElementById('enquiryForm');
-        enquiryForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Get form values
-            const name = document.getElementById('enquiry-name').value;
-            const email = document.getElementById('enquiry-email').value;
-            const subject = document.getElementById('enquiry-subject').value;
+            // Get form data
+            const formData = new FormData(this);
+            const name = document.getElementById('contact-name').value;
             
             // In a real implementation, you would send this data to a server
-            // For this example, we'll just show an alert
-            alert(`Thank you for your enquiry, ${name}! We'll respond to ${email} soon regarding "${subject}".`);
-            
-            // Reset form
-            enquiryForm.reset();
+            // For now, we'll just show a success message
+            alert(`Thank you ${name}! Your message has been received. We will respond to your inquiry shortly.`);
+            contactForm.reset();
         });
-
-        // Add floating animation to service cards on scroll
+        
+        // Animation on scroll for other elements
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
-
-        const observer = new IntersectionObserver((entries) => {
+        
+        const observer = new IntersectionObserver(function(entries) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeUp 0.8s ease forwards';
-                    observer.unobserve(entry.target);
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.style.opacity = '0';
-            observer.observe(card);
+        
+        // Observe elements for animation
+        const animatedElements = document.querySelectorAll('.about-text, .about-image, .booking-info, .booking-form, .contact-info, .contact-form');
+        
+        animatedElements.forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
         });
     </script>
 </body>
